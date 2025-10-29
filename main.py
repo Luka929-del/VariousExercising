@@ -95,9 +95,9 @@
 # ეძებს მომხმარებელს პირადი ნომრით და აბრუნებს მის ანგარიშზე თანხის
 # რაოდენობას, თუ ვერ იპოვა მომხმარებელი დაუპრინტეთ რომ მომხმარებელი არ
 # არსებობს.
-from logging import exception
-from random import choice
-from tkinter.font import names
+# from logging import exception
+# from random import choice
+# from tkinter.font import names
 
 
 # class Customer:
@@ -199,7 +199,7 @@ from tkinter.font import names
 #         print(f"The price of {product.name} is {product.price}ლ")
 #         choice = input("Would you like to buy? Y/N: ")
 #         if choice == "Y":
-#             print("Thank you for shopping with us, good bye!")
+#             print("Thank you for shopping with us, goodbye!")
 #         else:
 #             wants_other = input("Would you like to buy something else? Y/N: ")
 #             if wants_other == "Y":
@@ -338,7 +338,7 @@ from tkinter.font import names
 #     print()
 
 # num = 1
-# a = int(input("Enter the amount of rows: "))
+# a = int(input("Enter the amount of rows:"))
 # for i in range(a):
 #     print(num * "*")
 #     num += 1
@@ -891,3 +891,555 @@ from tkinter.font import names
 # import pong
 # pong.run()
 
+# def say_hello(n):
+#     if n==0:
+#         return
+#     print("hello")
+#     say_hello(n-1)
+# say_hello(3)
+
+
+# class Car:
+#     def __init__(self,brand,model,production_year,color,horse_power,is_sport_car = False):
+#         self.__brand = brand
+#         self.__model = model
+#         self.__production_year = production_year
+#         self.__color = color
+#         self.__horse_power = horse_power
+#         self.__is_sport_car = is_sport_car
+#     def get_brand(self):
+#         return self.__brand
+#     def get_model(self):
+#         return self.__model
+#     def get_production_year(self):
+#         return self.__production_year
+#     def get_color(self):
+#         return self.__color
+#     def get_horse_power(self):
+#         return self.__horse_power
+#     def get_is_sport_car(self):
+#         return self.__is_sport_car
+#     def change_color(self,new_color: str):
+#         if not isinstance(new_color, str):
+#             raise TypeError("new_color must be a string type!")
+#         if self.get_color() != new_color:
+#             self.__color = new_color
+#             return True
+#         return False
+#     def increase_horse_power(self, hp: int):
+#         if not isinstance(hp, int):
+#             raise TypeError("hp must be an integer type!")
+#         if hp > 0:
+#             self.__horse_power += hp
+#             return True
+#         elif hp <= 0:
+#             return False
+# my_car = Car("BMW","X5",1999,"Blue", 375)
+# print(my_car.get_color())
+# changed = my_car.change_color("Black")
+# print(changed)
+# print(my_car.get_color())
+# increased = my_car.increase_horse_power(0)
+# print(increased)
+
+# Create a Node class to create a node
+# class Node:
+#     def __init__(self, data):
+#         self.data = data
+#         self.next = None
+#
+# # Create a LinkedList class
+# class LinkedList:
+#     def __init__(self):
+#         self.head = None
+#
+#     # Method to add a node at the beginning of the LL
+#     def insertAtBegin(self, data):
+#         new_node = Node(data)
+#         new_node.next = self.head
+#         self.head = new_node
+#
+#     # Method to add a node at any index
+#     # Indexing starts from 0.
+#     def insertAtIndex(self, data, index):
+#         if index == 0:
+#             self.insertAtBegin(data)
+#             return
+#
+#         position = 0
+#         current_node = self.head
+#         while current_node is not None and position + 1 != index:
+#             position += 1
+#             current_node = current_node.next
+#
+#         if current_node is not None:
+#             new_node = Node(data)
+#             new_node.next = current_node.next
+#             current_node.next = new_node
+#         else:
+#             print("Index not present")
+#
+#     # Method to add a node at the end of LL
+#     def insertAtEnd(self, data):
+#         new_node = Node(data)
+#         if self.head is None:
+#             self.head = new_node
+#             return
+#
+#         current_node = self.head
+#         while current_node.next:
+#             current_node = current_node.next
+#
+#         current_node.next = new_node
+#
+#     # Update node at a given position
+#     def updateNode(self, val, index):
+#         current_node = self.head
+#         position = 0
+#         while current_node is not None and position != index:
+#             position += 1
+#             current_node = current_node.next
+#
+#         if current_node is not None:
+#             current_node.data = val
+#         else:
+#             print("Index not present")
+#
+#     # Method to remove first node of linked list
+#     def remove_first_node(self):
+#         if self.head is None:
+#             return
+#
+#         self.head = self.head.next
+#
+#     # Method to remove last node of linked list
+#     def remove_last_node(self):
+#         if self.head is None:
+#             return
+#
+#         # If there's only one node
+#         if self.head.next is None:
+#             self.head = None
+#             return
+#
+#         # Traverse to the second last node
+#         current_node = self.head
+#         while current_node.next and current_node.next.next:
+#             current_node = current_node.next
+#
+#         current_node.next = None
+#
+#     # Method to remove a node at a given index
+#     def remove_at_index(self, index):
+#         if self.head is None:
+#             return
+#
+#         if index == 0:
+#             self.remove_first_node()
+#             return
+#
+#         current_node = self.head
+#         position = 0
+#         while current_node is not None and current_node.next is not None and position + 1 != index:
+#             position += 1
+#             current_node = current_node.next
+#
+#         if current_node is not None and current_node.next is not None:
+#             current_node.next = current_node.next.next
+#         else:
+#             print("Index not present")
+#
+#     # Method to remove a node from the linked list by its data
+#     def remove_node(self, data):
+#         current_node = self.head
+#
+#         # If the node to be removed is the head node
+#         if current_node is not None and current_node.data == data:
+#             self.remove_first_node()
+#             return
+#
+#         # Traverse and find the node with the matching data
+#         while current_node is not None and current_node.next is not None:
+#             if current_node.next.data == data:
+#                 current_node.next = current_node.next.next
+#                 return
+#             current_node = current_node.next
+#
+#         # If the data was not found
+#         print("Node with the given data not found")
+#
+#     # Print the size of the linked list
+#     def sizeOfLL(self):
+#         size = 0
+#         current_node = self.head
+#         while current_node:
+#             size += 1
+#             current_node = current_node.next
+#         return size
+#
+#     # Print the linked list
+#     def printLL(self):
+#         current_node = self.head
+#         while current_node:
+#             print(current_node.data)
+#             current_node = current_node.next
+#
+#
+# # create a new linked list
+# llist = LinkedList()
+#
+# # add nodes to the linked list
+# llist.insertAtEnd('a')
+# llist.insertAtEnd('b')
+# llist.insertAtBegin('c')
+# llist.insertAtEnd('d')
+# llist.insertAtIndex('g', 2)
+#
+# # print the linked list
+# print("Node Data:")
+# llist.printLL()
+#
+# # remove nodes from the linked list
+# print("\nRemove First Node:")
+# llist.remove_first_node()
+# llist.printLL()
+#
+# print("\nRemove Last Node:")
+# llist.remove_last_node()
+# llist.printLL()
+#
+# print("\nRemove Node at Index 1:")
+# llist.remove_at_index(1)
+# llist.printLL()
+#
+# # print the linked list after all removals
+# print("\nLinked list after removing a node:")
+# llist.printLL()
+#
+# print("\nUpdate node Value at Index 0:")
+# llist.updateNode('z', 0)
+# llist.printLL()
+#
+# print("\nSize of linked list:", llist.sizeOfLL())
+
+# Function to find BFS of Graph from given source s
+# from collections import deque
+#
+#
+# def bfs(adj, start):
+#     visited = set()
+#     res = []
+#     q = deque()
+#
+#     visited.add(start)
+#     q.append(start)
+#
+#     while q:
+#         curr = q.popleft()
+#         res.append(curr)
+#
+#         for neighbor in adj.get(curr, []):
+#             if neighbor not in visited:
+#                 visited.add(neighbor)
+#                 q.append(neighbor)
+#
+#     return res
+#
+#
+# if __name__ == "__main__":
+#     adj = {
+#         'A': ['B', 'C', 'D', 'E'],
+#         'B': ['A', 'F', 'G'],
+#         'C': ['A', 'K'],
+#         'D': ['A', 'M'],
+#         'E': ['A', 'L'],
+#         'F': ['B', 'H'],
+#         'G': ['B', 'I'],
+#         'H': ['F', 'J'],
+#         'I': ['G', 'J'],
+#         'J': ['H', 'I', 'Z'],
+#         'K': ['C', 'N', 'O'],
+#         'L': ['E', 'R'],
+#         'M': ['D', 'O'],
+#         'N': ['K', 'P'],
+#         'O': ['K', 'M', 'Q'],
+#         'P': ['N', 'Z'],
+#         'Q': ['O', 'Z'],
+#         'R': ['L', 'S', 'T'],
+#         'S': ['R'],
+#         'T': ['R'],
+#         'Z': ['J', 'P', 'Q']
+#     }
+#
+#     ans = bfs(adj, 'A')
+#     for i in ans:
+#         print(i, end=" ")
+#
+# def dfs(graph, start, visited=None, result=None):
+#     if visited is None:
+#         visited = set()
+#     if result is None:
+#         result = []
+#
+#     visited.add(start)
+#     result.append(start)
+#
+#     for neighbor in sorted(graph.get(start, [])):
+#         if neighbor not in visited:
+#             dfs(graph, neighbor, visited, result)
+#     return result
+#
+#
+# if __name__ == "__main__":
+#     adj = {
+#         'A': ['B', 'C', 'D', 'E'],
+#         'B': ['A', 'F', 'G'],
+#         'C': ['A', 'K'],
+#         'D': ['A', 'M'],
+#         'E': ['A', 'L'],
+#         'F': ['B', 'H'],
+#         'G': ['B', 'I'],
+#         'H': ['F', 'J'],
+#         'I': ['G', 'J'],
+#         'J': ['H', 'I', 'Z'],
+#         'K': ['C', 'N', 'O'],
+#         'L': ['E', 'R'],
+#         'M': ['D', 'O'],
+#         'N': ['K', 'P'],
+#         'O': ['K', 'M', 'Q'],
+#         'P': ['N', 'Z'],
+#         'Q': ['O', 'Z'],
+#         'R': ['L', 'S', 'T'],
+#         'S': ['R'],
+#         'T': ['R'],
+#         'Z': ['J', 'P', 'Q']
+#     }
+#
+#     ans = dfs(adj, 'A')
+#     print("DFS traversal starting from A:")
+#     print(" -> ".join(ans))
+
+
+# a = 7
+# b = a
+# b += 9
+# print(a,b)
+
+# x = {}
+# print(type(x))
+
+# print(5/2)
+# print(5//2)
+
+# print(bool("2>5"))
+# print(bool(0.0000000001))
+
+# for i in 123:
+#     print(i)
+
+# print(bool([]))
+# print(bool(""))
+# print(bool(False))
+
+# print(1*0)
+# x=1
+# print(type(x))
+
+# x = 1,
+# print(type(x))
+
+
+'''დაწერე პროგრამა, რომელიც ითხოვს მომხმარებლისგან ორ ციფრს და აბრუნებს მათ ჯამს.'''
+import os
+
+# x = int(input("Enter first number: "))
+# y = int(input("Enter second number: "))
+# z = x + y
+# print(f"The sum of {x} and {y} is {z}")
+
+'''მომხმარებლისგან მიიღე ერთი მთელი რიცხვი და დაბეჭდე, არის თუ არა ლუწი თუ კენტი.'''
+# x = int(input("Enter number: "))
+# if x % 2 == 0:
+#     print("რიცხვი ლუწია")
+# else:
+#     print("რიცხვი კენტია")
+
+'''დაწერე პროგრამა, რომელიც ითვლის n პირველ ციფრებს ფიბონაჩის სერიიდან.'''
+# x = 0
+# y = 1
+# fibonacci_list = [0,1]
+# m = int(input("ფიბონაჩის პირველი რამდენი რიცხვი დავბეჭდოთ? "))
+# while (m - 2) > 0:
+#     z = x + y
+#     fibonacci_list.append(z)
+#     x = y
+#     y = z
+#     m -= 1
+# print(fibonacci_list)
+
+'''მომხმარებლისგან მიიღე რამდენიმე რიცხვი (მცირე სიით ან ველში) და დაბეჭდე ყველაზე დიდი და ყველაზე პატარა რიცხვი.'''
+# my_list = []
+# for i in range(10):
+#     a = int(input("Enter number: "))
+#     my_list.append(a)
+# print(min(my_list))
+# print(max(my_list))
+
+'''მომხმარებლისგან მიიღე სიტყვა და დაბეჭდე:
+
+სიტყვაში არსებული ასოებისა და სიმბოლოების რაოდენობა
+
+სიტყვის პირველი და ბოლო ასო
+
+სიტყვის უკნიდან პირველი 3 ასო'''
+# my_word = input("text a word: ")
+# print(len(my_word))
+# print(my_word[0])
+# print(my_word[-1])
+# try:
+#     for i in range(1,4,1):
+#         print(my_word[-i])
+# except IndexError:
+#     print("არასაკმარისი სიმბოლოებისგანაა შემდგარი სიტყვა!")
+
+# print(my_word[-3:])
+
+'''შეიყვანე 10 რიცხვი ლისტში და იპოვე საშუალო მნიშვნელობა.'''
+# my_list = []
+# for i in range(10):
+#     x = int(input("Enter number: "))
+#     my_list.append(x)
+# avg = sum(my_list)/len(my_list)
+# print(f"რიცხვების საშუალო არის {avg}")
+
+'''ლისტიდან ამოიღე დუბლიკატები და დატოვე მხოლოდ უნიკალური რიცხვები.'''
+# my_list = [1,4,5,7,9,24,55,67,5,9,1,1,68,4]
+# unique_list = list(set(my_list))
+# print(unique_list)
+
+'''მეორე ამოხსნის გზა'''
+# my_list = [1,4,5,7,9,24,55,67,5,9,1,1,68,4]
+# unique_list = []
+# for i in my_list:
+#     if i not in unique_list:
+#         unique_list.append(i)
+#     else:continue
+# print(unique_list)
+
+'''დაადგინე მინიმუმისა და მაქსიმუმის ინდექსები სიაში.'''
+# my_list = [1,4,5,7,9,24,55,67,5,9,1,1,68,4]
+# min_indexes = []
+# max_indexes = []
+# for i in range(len(my_list)):
+#     if my_list[i] == min(my_list):
+#         min_indexes.append(i)
+#     elif my_list[i] == max(my_list):
+#         max_indexes.append(i)
+#     else:continue
+# print(f"მინიმუმი რიცხვების ინდექსებია: {min_indexes}")
+# print(f"მაქსიმუმი რიცხვების ინდექსებია: {max_indexes}")
+
+'''ხელით (sort()–ის გარეშე) დაალაგე სია ზრდადობით.'''
+# my_list = [1,4,5,7,9,24,55,67,5,9,1,1,68,4]
+# sorted_list = []
+#
+# for i in my_list:
+#     inserted = False
+#     for j in range(len(sorted_list)):
+#         if i < sorted_list[j]:
+#             sorted_list.insert(j,i)
+#             inserted = True
+#             break
+#     if not inserted:
+#         sorted_list.append(i)
+#
+# print(sorted_list)
+
+# def outer_function(message):
+#     def inner_function():
+#         print(f"Message: {message}")
+#     return inner_function
+#
+# closure_function = outer_function("Hello")
+# closure_function()
+
+# ******დეკორატორები******
+# def simple_decorator(func):
+#     def wrapper():
+#         print("Before the call")
+#         func()
+#         print("After the call")
+#     return wrapper
+#
+# @simple_decorator
+# def greet():
+#     print("Hello!")
+#
+# greet()
+
+# def uppercase_decorator(func):
+#     def wrapper():
+#         return func().upper()
+#     return wrapper
+#
+# def split_string(func):
+#     def wrapper():
+#         return func().split()
+#     return wrapper
+#
+# @split_string
+# @uppercase_decorator
+# def say_hi():
+#     return "hello there"
+#
+# print(say_hi())
+
+# def decorator_with_arguments(func):
+#     def wrapper(arg1, arg2):
+#         print(f"My arguments: {arg1}, {arg2}")
+#         func(arg1, arg2)
+#     return wrapper
+#
+# @decorator_with_arguments
+# def cities(city_one, city_two):
+#     print(f"Cities: {city_one}, {city_two}")
+#
+# cities("Nairobi", "Accra")
+
+
+# class UppercaseDecorator:
+#     def __init__(self, func):
+#         self.func = func
+#
+#     def __call__(self, *args, **kwargs):
+#         return self.func(*args, **kwargs).upper()
+#
+# @UppercaseDecorator
+# def greet():
+#     return "hello there"
+#
+# print(greet())
+
+
+# კლასის ახალი ინსტანსის შექმნა, და იწერება ინიტამდე
+# class Employee:
+#     def __new__(cls):
+#         print("__new__ magic method is called")
+#         inst = object.__new__(cls)
+#         return inst  # fixed indentation
+#
+#     def __init__(self):
+#         print("__init__ magic method is called")
+#         self.name = 'Satya'
+#
+#
+# # Example usage:
+# emp = Employee()
+# print(emp.name)
+
+# current working directory
+# print(os.getcwd())
+
+# range() ში float ტიპის რიცხვები არ გამოიყენება, მხოლოდ ინტეჯერი
+# for x in range(0.5, 5.5, 0.5):
+#   print(x)
