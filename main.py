@@ -1142,3 +1142,6 @@ import os
 # range() ში float ტიპის რიცხვები არ გამოიყენება, მხოლოდ ინტეჯერი
 # for x in range(0.5, 5.5, 0.5):
 #   print(x)
+
+# Data = ['abc','def','abcde','efg']
+# print(max(Data))
